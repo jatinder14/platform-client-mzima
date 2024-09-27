@@ -326,3 +326,16 @@
     </div>
   </ng-container>
 </div>
+
+<ng-template #loader>
+  <app-spinner class="spinner"></app-spinner>
+</ng-template>
+
+<ng-template #postsEmpty>
+  <span class="posts-empty" *ngIf="filters.form[0] === 'none'; else noPosts">{{
+    'post.no_posts_yet' | translate
+  }}</span>
+  <ng-template #noPosts>
+    <span class="posts-empty">{{ 'post.survey_has_no_posts' | translate }}</span>
+  </ng-template>
+</ng-template>
